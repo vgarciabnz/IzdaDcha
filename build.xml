@@ -1,0 +1,35 @@
+<!-- Ant makefile for ImageJ -->
+
+ <project name="IzdaDcha" default="compress">
+	
+	<target name="compile" description="Compile everything.">
+		<!-- First, ensure the build directory exists. -->
+    	<mkdir dir="bin" />
+    	<!-- Build everything; add debug="on" to debug -->
+		<javac srcdir="." destdir="bin" optimize="on" debug="on">
+			<classpath>
+				<fileset dir="lib">
+					<include name="**.jar"/>
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+	
+	<target name="compress" depends="compile">
+		<jar jarfile="ID.jar">
+			<fileset dir="bin"/>
+			<restrict>
+				<name name="**/*.class"/>
+				<archives>
+					<zips>
+						<fileset dir="lib" includes="**/*jar"/>
+					</zips>
+				</archives>
+			</restrict>
+			<manifest>
+				<attribute name="Main-Class" value="main.IzdaDcha"/>
+			</manifest>
+		</jar>
+	</target>
+	
+</project>
