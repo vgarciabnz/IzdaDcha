@@ -107,7 +107,7 @@ public class IzdaDcha {
 		JLabel nameText = new JLabel(name);
 		panel.add(nameText);
 		
-		//frame.setLocationRelativeTo(null);
+		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 	}
 	
