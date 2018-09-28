@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'webratio/ant' } }
+    agent { docker { image 'cryptomator/centos-jdk-ant-x64' } }
     stages {
         stage('Build') {
             steps {
