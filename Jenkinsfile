@@ -6,7 +6,7 @@ pipeline {
                 sh 'ant'
             }
         }
-        state('Test') {
+        stage('Test') {
             steps {
                 sh 'echo "Hello World"'
             }
