@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'frekele/java:jdk8u172' } }
+    agent { docker { image 'frekele/ant' } }
     stages {
         stage('Build') {
             steps {
