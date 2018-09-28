@@ -1,9 +1,9 @@
 pipeline {
-    agent { docker { image 'frekele/ant' } }
+    agent { docker { image 'maven:3.3.3' } }
     stages {
         stage('Build') {
             steps {
-                sh 'ant -version'
+                sh 'mvn --version'
             }
         }
         stage('Test') {
